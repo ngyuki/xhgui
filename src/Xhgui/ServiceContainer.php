@@ -8,7 +8,7 @@ use PDO;
 use Pimple\Container;
 use RuntimeException;
 use Slim\Middleware\SessionCookie;
-use Slim\Slim;
+use Slim\App;
 use Slim\Views\Twig;
 use XHGui\Middleware\RenderMiddleware;
 use XHGui\Searcher\MongoSearcher;
@@ -66,7 +66,7 @@ class ServiceContainer extends Container
                 date_default_timezone_set($c['config']['timezone']);
             }
 
-            $app = new Slim($c['config']);
+            $app = new App($c['config']);
 
             // Enable cookie based sessions
             $app->add(new SessionCookie([

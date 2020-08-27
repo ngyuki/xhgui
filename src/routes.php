@@ -3,13 +3,13 @@
  * Routes for Xhgui
  */
 
-use Slim\Slim;
+use Slim\App;
 use Slim\Views\Twig;
 use XHGui\Controller\ImportController;
 use XHGui\ServiceContainer;
 use XHGui\Twig\TwigExtension;
 
-/** @var Slim $app */
+/** @var App $app */
 /** @var ServiceContainer $di */
 
 $app->error(static function (Exception $e) use ($di, $app) {

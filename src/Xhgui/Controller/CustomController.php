@@ -2,9 +2,9 @@
 
 namespace XHGui\Controller;
 
-use Slim\Slim;
 use XHGui\Searcher\SearcherInterface;
 use XHGui\AbstractController;
+use Slim\App;
 
 class CustomController extends AbstractController
 {
@@ -13,7 +13,7 @@ class CustomController extends AbstractController
      */
     protected $searcher;
 
-    public function __construct(Slim $app, SearcherInterface $searcher)
+    public function __construct(App $app, SearcherInterface $searcher)
     {
         parent::__construct($app);
         $this->searcher = $searcher;

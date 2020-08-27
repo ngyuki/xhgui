@@ -2,10 +2,10 @@
 
 namespace XHGui\Controller;
 
-use Slim\Slim;
 use XHGui\Searcher\SearcherInterface;
 use XHGui\AbstractController;
 use XHGui\Profile;
+use Slim\App;
 
 class WaterfallController extends AbstractController
 {
@@ -14,7 +14,7 @@ class WaterfallController extends AbstractController
      */
     protected $searcher;
 
-    public function __construct(Slim $app, SearcherInterface $searcher)
+    public function __construct(App $app, SearcherInterface $searcher)
     {
         parent::__construct($app);
         $this->searcher = $searcher;
