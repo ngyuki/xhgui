@@ -14,6 +14,8 @@ env:
 jobs:
   allow_failures:
     - php: 7.4
+    - env:
+        XHGUI_SAVE_HANDLER=pdo
   include:
     - php: 7.2
       env: COVERAGE=1
