@@ -224,7 +224,7 @@ class PdoSearcher implements SearcherInterface
         return [
             'results' => $results,
             'sort' => 'meta.request_ts',
-            'direction' => 'desc',
+            'direction' => $direction,
             'page' => $page,
             'perPage' => $perPage,
             'totalPages' => $totalPages,
