@@ -32,6 +32,9 @@ while (!feof($fp)) {
     $line = fgets($fp);
     $data = json_decode($line, true);
     if ($data) {
+        // do not allow external importer to specify id
+        unset($data['_id']);
+
         $saver->save($data);
     }
 }

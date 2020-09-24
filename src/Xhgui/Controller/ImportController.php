@@ -55,6 +55,10 @@ class ImportController extends AbstractController
         }
 
         $data = json_decode($request->getBody(), true);
+
+        // do not allow external importer to specify id
+        unset($data['_id']);
+
         $this->saver->save($data);
     }
 }
